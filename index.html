@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
         <h1>Ping Pong Score Keeper</h1>
     </header> 
     <main>
-        <h2>Score</h2>
+        <h2><span id="playerOneDisplay">0</span> to <span id="playerTwoDisplay">0</span></h2>
         <p>Use the buttons below to keep score</p>
         <label for="playingto">Playing To</label>
         <select id="playingto" name="playingto">
@@ -22,10 +22,12 @@
             <option value="8">8</option>
             <option value="9">9</option>
             <option value="10">10</option>
-        </select>    
-        <button>+1 Player One</button>
-        <button>+1 Player Two</button>
-        <button>Reset</button>
+        </select>
+        <div>  
+            <button id="playerOneButton">+1 Player One</button>
+            <button id="playerTwoButton">+1 Player Two</button>
+            <button id="resetButton">Reset</button>
+        </div>  
     </main>
     <script src="app.js"></script>
 </body>
