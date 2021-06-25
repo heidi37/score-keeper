@@ -1,6 +1,6 @@
 let playerOneScore = 0;
 let playerTwoScore = 0;
-
+let maxScore = 5;
 
 
 const playerOneDisplay = document.querySelector('#playerOneDisplay');
@@ -11,7 +11,7 @@ const buttonTwo = document.querySelector('#playerTwoButton');
 const buttonReset = document.querySelector('#resetButton');
 
 scoreSelect.addEventListener('input', function () {
-    let maxScore = scoreSelect.value;
+    maxScore = parseInt(scoreSelect.value);
     console.log(maxScore);
     return maxScore;
 });
@@ -26,10 +26,9 @@ buttonOne.addEventListener('click', function (e) {
         playerTwoDisplay.style.color = "red";
         buttonTwo.disabled = true;
     }
-    e.stopPropagation();
 });
 
-buttonTwo.addEventListener('click', function () {
+buttonTwo.addEventListener('click', function (e) {
     playerTwoScore += 1;
     playerTwoDisplay.innerText = `${playerTwoScore}`;
     console.log(maxScore);
@@ -39,7 +38,6 @@ buttonTwo.addEventListener('click', function () {
         playerOneDisplay.style.color = "red";
         buttonOne.disabled = true;
     }
-    e.stopPropagation();
 });
 
 buttonReset.addEventListener('click', function () {
